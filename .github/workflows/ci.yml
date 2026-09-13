@@ -7,6 +7,14 @@ on:
   pull_request:
     branches: [main]
 
+concurrency:
+  group: ci-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+  id-token: write
+
 jobs:
   build:
     uses: ./.github/workflows/_build.yml
