@@ -1,0 +1,13 @@
+name: Deploy
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  build:
+    uses: ./.github/workflows/_build.yml
+    with:
+      deploy: true
+    secrets: inherit
