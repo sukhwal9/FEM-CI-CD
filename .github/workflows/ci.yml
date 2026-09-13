@@ -15,4 +15,6 @@ permissions: {}
 
 jobs:
   build:
+    permission:
+      contents: read
     uses: ./.github/workflows/_build.yml
